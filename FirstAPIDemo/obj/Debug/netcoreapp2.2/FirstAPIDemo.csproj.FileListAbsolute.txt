@@ -1,0 +1,4 @@
+C:\Users\cidos\Source\Mentorship and Training\SQ009\FirstAPISolution\FirstAPIDemo\obj\Debug\netcoreapp2.2\FirstAPIDemo.csproj.AssemblyReference.cache
+C:\Users\cidos\Source\Mentorship and Training\SQ009\FirstAPISolution\FirstAPIDemo\obj\Debug\netcoreapp2.2\FirstAPIDemo.csproj.CoreCompileInputs.cache
+C:\Users\cidos\Source\Mentorship and Training\SQ009\FirstAPISolution\FirstAPIDemo\obj\Debug\netcoreapp2.2\FirstAPIDemo.AssemblyInfoInputs.cache
+C:\Users\cidos\Source\Mentorship and Training\SQ009\FirstAPISolution\FirstAPIDemo\obj\Debug\netcoreapp2.2\FirstAPIDemo.AssemblyInfo.cs
