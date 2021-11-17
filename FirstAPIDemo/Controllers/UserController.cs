@@ -12,23 +12,24 @@ namespace FirstAPIDemo.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    //[Authorize]
+
     public class UserController : ControllerBase
     {
         private readonly IJwtService _jwtGen;
-        private static readonly List<string> _listOfUsers;
+        private readonly List<string> _listOfUsers;
 
         public UserController(IJwtService jwtService)
         {
 
             _jwtGen = jwtService;
 
-            //_listofusers = new list<string>
-            //{
-            //    "suleiman s", "stanley u", "edore u", "blessing e", "isreal o"
-            //};
+            _listOfUsers = new List<string>
+            {
+                "suleiman s", "stanley u", "edore u", "blessing e", "isreal o"
+            };
         }
 
+        [Authorize]
         [HttpGet]
         [Route("GetUser/{name}")]
         public IActionResult GetUser(string name)
@@ -53,6 +54,7 @@ namespace FirstAPIDemo.Controllers
             return Ok(userToReturn);
         }
 
+        [Authorize]
         [HttpGet]
         [Route("GetUsers")]
         public IActionResult GetUsers()
@@ -68,6 +70,7 @@ namespace FirstAPIDemo.Controllers
 
         }
 
+        [Authorize]
         [HttpPost]
         [Route("AddUser")]
         public IActionResult AddUser(UserDetailsDto model)
