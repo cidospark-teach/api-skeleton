@@ -1,3 +1,4 @@
+using FirstAPIDemo.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -35,6 +37,12 @@ namespace FirstAPIDemo
                     Description = "Simple API Sample"
                 });
             });
+
+            services.AddTransient<IJwtService, JwtService>();
+
+            services.AddAuthentication(option => { 
+                option.DefaultAuthenticateScheme = JwtBearerDefaults
+            }).AddJwtBearer();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

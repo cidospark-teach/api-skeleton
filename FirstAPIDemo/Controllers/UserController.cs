@@ -1,5 +1,7 @@
 ﻿using FirstAPIDemo.Models;
 using FirstAPIDemo.Models.DTOs;
+using FirstAPIDemo.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,16 +12,21 @@ namespace FirstAPIDemo.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    //[Authorize]
     public class UserController : ControllerBase
     {
+        private readonly IJwtService _jwtGen;
         private static readonly List<string> _listOfUsers;
 
-        static UserController()
+        public UserController(IJwtService jwtService)
         {
-            _listOfUsers = new List<string>
-            {
-                "Suleiman S", "Stanley U", "Edore U", "Blessing E", "Isreal O"
-            };
+
+            _jwtGen = jwtService;
+
+            //_listofusers = new list<string>
+            //{
+            //    "suleiman s", "stanley u", "edore u", "blessing e", "isreal o"
+            //};
         }
 
         [HttpGet]
@@ -65,7 +72,7 @@ namespace FirstAPIDemo.Controllers
         [Route("AddUser")]
         public IActionResult AddUser(UserDetailsDto model)
         {
-            throw new Exception("Error caught!");
+            //throw new Exception("Error caught!");
 
             if (model == null)
                 return BadRequest("Empty model object");
@@ -80,6 +87,23 @@ namespace FirstAPIDemo.Controllers
             _listOfUsers.Add($"{model.FirstName} {model.LastName} {model.Position}");
 
             return Ok("New user added!");
+        }
+
+        [HttpGet]
+        [Route("JwtGen")]
+        public IActionResult GenerateToken()
+        {
+            var user = new User
+            {
+                Id = Guid.NewGuid().ToString(),
+                LastName = "Ibe",
+                FirstName = "Francis"
+            };
+
+            var roles = new List<string> { "Staff", "Stack Lead" };
+
+            var token = _jwtGen.JwtGen(user, roles);
+            return Ok(token);
         }
     }
 }

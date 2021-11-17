@@ -23,3 +23,7 @@ C:\Users\cidos\Source\Mentorship and Training\SQ009\FirstAPISolution\FirstAPIDem
 C:\Users\cidos\Source\Mentorship and Training\SQ009\FirstAPISolution\FirstAPIDemo\obj\Debug\netcoreapp3.1\FirstAPIDemo.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\cidos\Source\Mentorship and Training\SQ009\FirstAPISolution\FirstAPIDemo\obj\Debug\netcoreapp3.1\FirstAPIDemo.csproj.CopyComplete
 C:\Users\cidos\Source\Mentorship and Training\SQ009\FirstAPISolution\FirstAPIDemo\obj\Debug\netcoreapp3.1\FirstAPIDemo.csproj.AssemblyReference.cache
+C:\Users\cidos\Source\Mentorship and Training\SQ009\FirstAPISolution\FirstAPIDemo\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\cidos\Source\Mentorship and Training\SQ009\FirstAPISolution\FirstAPIDemo\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\cidos\Source\Mentorship and Training\SQ009\FirstAPISolution\FirstAPIDemo\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\cidos\Source\Mentorship and Training\SQ009\FirstAPISolution\FirstAPIDemo\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
