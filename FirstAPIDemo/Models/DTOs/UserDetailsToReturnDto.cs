@@ -23,8 +23,8 @@ namespace FirstAPIDemo.Models.DTOs
         //[RegularExpression(@"^\+\d{3}\-\d{9,10}")]
         public string Title { get; set; }
 
-        //[ValidateAge(10, 18, ErrorMessage="Age out of range!")]
-        //[RegularExpression(@"^\d{4}")]
+        [ValidateAge(10, 18, ErrorMessage="Age out of range!")]
+        [RegularExpression(@"^\d{4}")]
         public int Age { get; set; }
 
 
@@ -41,11 +41,11 @@ namespace FirstAPIDemo.Models.DTOs
         }
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            var ageYear = Convert.ToDateTime(value);
+            var ageYear = Convert.ToDateTime(value).Year;
             var currentDate = DateTime.Now.Year;
 
-            var age = currentDate - ageYear.Year;
-            if ((ageYear.Year + age) > currentDate)
+            var age = currentDate - ageYear;
+            if ((ageYear + age) > currentDate)
                 age--;
 
             if(age >= _minAge && age <= _maxAge)
